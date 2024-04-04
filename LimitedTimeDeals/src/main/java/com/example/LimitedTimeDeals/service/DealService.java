@@ -10,7 +10,6 @@ import com.example.LimitedTimeDeals.dto.response.ClaimDealResponse;
 import com.example.LimitedTimeDeals.dto.response.CreateDealResponse;
 import com.example.LimitedTimeDeals.dto.response.EndDealResponse;
 import com.example.LimitedTimeDeals.dto.response.UpdateDealResponse;
-import org.springframework.stereotype.Service;
 
 
 public interface DealService {

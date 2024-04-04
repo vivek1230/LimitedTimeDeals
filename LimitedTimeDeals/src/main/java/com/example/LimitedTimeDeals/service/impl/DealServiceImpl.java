@@ -79,9 +79,9 @@ public class DealServiceImpl implements DealService {
     public BaseResponse<EndDealResponse> endDeal(Long dealId, String dealName, EndDealRequest endDealRequest) {
 
         Optional<Deal> optionalDeal = dealDao.findByDealId(dealId);
-        if(optionalDeal.isPresent()){
+        if (optionalDeal.isPresent()) {
             Deal deal = optionalDeal.get();
-            if(deal.getDealStatus().equals(DealStatus.ACTIVE)) {
+            if (deal.getDealStatus().equals(DealStatus.ACTIVE)) {
                 deal.setDealStatus(DealStatus.ENDED);
                 dealDao.save(deal);
 
@@ -115,9 +115,9 @@ public class DealServiceImpl implements DealService {
     public BaseResponse<UpdateDealResponse> updateDeal(Long dealId, String dealName, UpdateDealRequest updateDealRequest) {
 
         Optional<Deal> optionalDeal = dealDao.findByDealId(dealId);
-        if(optionalDeal.isPresent()) {
+        if (optionalDeal.isPresent()) {
             Deal deal = optionalDeal.get();
-            if(deal.getDealStatus().equals(DealStatus.ACTIVE)) {
+            if (deal.getDealStatus().equals(DealStatus.ACTIVE)) {
                 deal.setDealStartTime(updateDealRequest.getDealStartTime());
                 deal.setDealEndTime(updateDealRequest.getDealEndTime());
                 deal.setItemCountInDeal(updateDealRequest.getItemCountInDeal());
@@ -156,9 +156,9 @@ public class DealServiceImpl implements DealService {
     public BaseResponse<ClaimDealResponse> claimDeal(Long dealId, String dealName, ClaimDealRequest claimDealRequest) {
 
         Optional<Deal> optionalDeal = dealDao.findByDealId(dealId);
-        if(optionalDeal.isPresent()){
+        if (optionalDeal.isPresent()) {
             Deal deal = optionalDeal.get();
-            if(deal.getDealStatus().equals(DealStatus.ACTIVE)) {
+            if (deal.getDealStatus().equals(DealStatus.ACTIVE)) {
                 if (claimDealRequest.getCount() <= deal.getItemCountInDeal()) {
                     Claim claim = Claim.builder()
                             .username(claimDealRequest.getUsername())
@@ -191,7 +191,7 @@ public class DealServiceImpl implements DealService {
                     response.setTimeStamp(new Date());
                     return response;
                 }
-            }  else {
+            } else {
                 BaseResponse<ClaimDealResponse> response = new BaseResponse<>();
                 response.setResponseMsg("Deal is not active");
                 response.setRequestId(UUID.randomUUID().toString());

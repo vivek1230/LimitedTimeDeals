@@ -13,7 +13,7 @@ import org.springframework.data.annotation.Id;
 @Table(name = "item")
 @Builder
 @Data
-public class Item  extends BaseEntity {
+public class Item extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
