@@ -2,13 +2,9 @@ package com.example.LimitedTimeDeals.entity;
 
 
 import com.example.LimitedTimeDeals.enums.DealStatus;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 
