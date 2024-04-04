@@ -4,13 +4,15 @@ import com.example.LimitedTimeDeals.dao.ClaimDao;
 import com.example.LimitedTimeDeals.entity.Claim;
 import com.example.LimitedTimeDeals.repository.ClaimRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-//@Log4j
+@Slf4j
 @Service
-@RequiredArgsConstructor
 public class ClaimDaoImpl implements ClaimDao {
 
+    @Autowired
     private ClaimRepository claimRepository;
 
     @Override

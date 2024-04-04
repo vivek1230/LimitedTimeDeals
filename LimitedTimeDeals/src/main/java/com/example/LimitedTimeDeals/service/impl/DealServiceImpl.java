@@ -19,6 +19,7 @@ import com.example.LimitedTimeDeals.enums.DealStatus;
 import com.example.LimitedTimeDeals.service.DealService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -28,11 +29,14 @@ import java.util.UUID;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor
 public class DealServiceImpl implements DealService {
 
+
+    @Autowired
     ItemDao itemDao;
+    @Autowired
     DealDao dealDao;
+    @Autowired
     ClaimDao claimDao;
 
     @Override

@@ -4,15 +4,17 @@ import com.example.LimitedTimeDeals.dao.DealDao;
 import com.example.LimitedTimeDeals.entity.Deal;
 import com.example.LimitedTimeDeals.repository.DealRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-//@Log4j
+@Slf4j
 @Service
-@RequiredArgsConstructor
 public class DealDaoImpl implements DealDao {
 
+    @Autowired
     DealRepository dealRepository;
 
     @Override

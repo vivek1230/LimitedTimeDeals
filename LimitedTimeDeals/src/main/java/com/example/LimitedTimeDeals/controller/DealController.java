@@ -13,14 +13,15 @@ import com.example.LimitedTimeDeals.dto.response.UpdateDealResponse;
 import com.example.LimitedTimeDeals.service.DealService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
 @RequestMapping("/deal")
-@RequiredArgsConstructor
 public class DealController {
 
+    @Autowired
     private DealService dealService;
 
     @PostMapping("/create-deal")
